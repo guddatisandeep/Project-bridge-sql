@@ -1,5 +1,4 @@
-CREAT TABLE employees
-{
+CREATE TABLE employees {
   id INT,
   name VARCH {50},
   department VARCH {50},
