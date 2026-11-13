@@ -1,0 +1,35 @@
+name: AI Response Quality Lab tests
+
+on:
+  push:
+    paths:
+      - 'ai-response-quality-lab/**'
+      - '.github/workflows/ai-quality-lab.yml'
+  pull_request:
+    paths:
+      - 'ai-response-quality-lab/**'
+      - '.github/workflows/ai-quality-lab.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-quality-lab:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ai-response-quality-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Generate evaluation report
+        run: python evaluate.py
+      - name: Upload example report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-response-quality-report
+          path: ai-response-quality-lab/reports/latest.json

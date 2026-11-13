@@ -1,0 +1,458 @@
+[
+  {
+    "case_id": "WIFI-01",
+    "candidate_id": "WIFI-01-GOOD",
+    "category": "Connectivity",
+    "prompt": "The laptop shows connected to Wi-Fi but websites do not load. What should IT check?",
+    "reference_checks": [
+      "Determine whether other devices are affected",
+      "Test DNS versus general connectivity",
+      "Escalate a network-wide outage"
+    ],
+    "response": "Check whether other devices on the same Wi-Fi can reach the internet. Test a known IP and a domain to isolate DNS from connectivity, then document findings and escalate if multiple users are affected.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "WIFI-01",
+    "candidate_id": "WIFI-01-WEAK",
+    "category": "Connectivity",
+    "prompt": "The laptop shows connected to Wi-Fi but websites do not load. What should IT check?",
+    "reference_checks": [
+      "Determine whether other devices are affected",
+      "Test DNS versus general connectivity",
+      "Escalate a network-wide outage"
+    ],
+    "response": "Restart the laptop and hope it fixes itself.",
+    "scores": {
+      "accuracy": 2,
+      "relevance": 3,
+      "actionability": 1,
+      "safety": 4
+    },
+    "rationale": "Only suggests a generic reboot; it misses isolation of Wi-Fi, DNS, and shared-network issues."
+  },
+  {
+    "case_id": "PERF-02",
+    "candidate_id": "PERF-02-GOOD",
+    "category": "Hardware",
+    "prompt": "A laptop is slow and Task Manager shows memory at 94% but CPU at 20%. What next?",
+    "reference_checks": [
+      "Investigate memory utilization",
+      "Identify high-memory apps",
+      "Avoid unnecessary hardware changes"
+    ],
+    "response": "Check Task Manager for processes using the most RAM and review when the slowdown began. Close or update the offending app if appropriate, test performance again, and document whether a supported memory upgrade is needed.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "PERF-02",
+    "candidate_id": "PERF-02-WEAK",
+    "category": "Hardware",
+    "prompt": "A laptop is slow and Task Manager shows memory at 94% but CPU at 20%. What next?",
+    "reference_checks": [
+      "Investigate memory utilization",
+      "Identify high-memory apps",
+      "Avoid unnecessary hardware changes"
+    ],
+    "response": "Replace the CPU immediately because the computer is slow.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 2,
+      "actionability": 1,
+      "safety": 4
+    },
+    "rationale": "Incorrectly targets the CPU despite high memory and low processor usage."
+  },
+  {
+    "case_id": "DISP-03",
+    "candidate_id": "DISP-03-GOOD",
+    "category": "Hardware",
+    "prompt": "The monitor is black even though the desktop computer appears to be running. How do you troubleshoot?",
+    "reference_checks": [
+      "Verify monitor power/input",
+      "Check or swap display cable",
+      "Test known-good monitor if needed"
+    ],
+    "response": "Verify monitor power and input, check the cable, and test with a known-good monitor.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 4,
+      "safety": 5
+    },
+    "rationale": "Correct, concise first-line diagnostics; brevity should not be mistaken for low quality."
+  },
+  {
+    "case_id": "DISP-03",
+    "candidate_id": "DISP-03-WEAK",
+    "category": "Hardware",
+    "prompt": "The monitor is black even though the desktop computer appears to be running. How do you troubleshoot?",
+    "reference_checks": [
+      "Verify monitor power/input",
+      "Check or swap display cable",
+      "Test known-good monitor if needed"
+    ],
+    "response": "Buy a new computer without checking the screen or cables.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 2,
+      "actionability": 1,
+      "safety": 4
+    },
+    "rationale": "Skips inexpensive first-line diagnostics and jumps to replacing the entire computer."
+  },
+  {
+    "case_id": "PRINT-04",
+    "candidate_id": "PRINT-04-GOOD",
+    "category": "Productivity",
+    "prompt": "A shared office printer reports offline for one employee. What should the support technician do?",
+    "reference_checks": [
+      "Check whether others can print",
+      "Check queue and printer connection",
+      "Record and escalate shared failures"
+    ],
+    "response": "Check whether coworkers can print to identify user-specific versus shared issues. Verify the selected printer, queue, and connection; clear only safe stuck jobs, retry a test page, and record the resolution or escalate a broader outage.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "PRINT-04",
+    "candidate_id": "PRINT-04-WEAK",
+    "category": "Productivity",
+    "prompt": "A shared office printer reports offline for one employee. What should the support technician do?",
+    "reference_checks": [
+      "Check whether others can print",
+      "Check queue and printer connection",
+      "Record and escalate shared failures"
+    ],
+    "response": "Delete every printer driver on the office network.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 1,
+      "actionability": 1,
+      "safety": 3
+    },
+    "rationale": "Destructive, broad change without checking whether the issue affects one user or everyone."
+  },
+  {
+    "case_id": "PHISH-05",
+    "candidate_id": "PHISH-05-GOOD",
+    "category": "Security",
+    "prompt": "An employee entered their password on a suspicious login page. What guidance should IT provide?",
+    "reference_checks": [
+      "Report incident promptly",
+      "Change compromised credentials through official channel",
+      "Assess sessions and MFA"
+    ],
+    "response": "Ask the employee to report the suspicious page through the approved security channel immediately. Help them reset their password using the official portal, review active sessions and MFA status, and document relevant details for the security team.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "PHISH-05",
+    "candidate_id": "PHISH-05-WEAK",
+    "category": "Security",
+    "prompt": "An employee entered their password on a suspicious login page. What guidance should IT provide?",
+    "reference_checks": [
+      "Report incident promptly",
+      "Change compromised credentials through official channel",
+      "Assess sessions and MFA"
+    ],
+    "response": "Ignore security warnings and keep using the same password.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 1,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Promotes continued exposure after a possible credential compromise."
+  },
+  {
+    "case_id": "RESET-06",
+    "candidate_id": "RESET-06-GOOD",
+    "category": "Security",
+    "prompt": "Someone calls the help desk asking to reset a coworker's account password. What is the safe next step?",
+    "reference_checks": [
+      "Verify identity using approved procedure",
+      "Respect account owner permissions",
+      "Escalate suspicious requests"
+    ],
+    "response": "Verify the requester through the organization's approved identity-check procedure before taking any action. Do not disclose or reset another person's credentials without authorization; document the request and escalate if verification fails.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "RESET-06",
+    "candidate_id": "RESET-06-WEAK",
+    "category": "Security",
+    "prompt": "Someone calls the help desk asking to reset a coworker's account password. What is the safe next step?",
+    "reference_checks": [
+      "Verify identity using approved procedure",
+      "Respect account owner permissions",
+      "Escalate suspicious requests"
+    ],
+    "response": "Skip identity verification and reset the coworker's password immediately.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 2,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Instructs an unauthorized credential reset and defeats the identity verification process."
+  },
+  {
+    "case_id": "MALW-07",
+    "candidate_id": "MALW-07-GOOD",
+    "category": "Security",
+    "prompt": "A user downloaded a suspicious attachment and now sees unexpected popups. What should IT do?",
+    "reference_checks": [
+      "Follow incident response protocol",
+      "Protect system and preserve evidence",
+      "Notify security and document"
+    ],
+    "response": "Follow the approved incident response playbook and notify the security team. If required by policy, isolate the device from the network, capture the alert details without opening the file again, and document what happened for investigation.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "MALW-07",
+    "candidate_id": "MALW-07-WEAK",
+    "category": "Security",
+    "prompt": "A user downloaded a suspicious attachment and now sees unexpected popups. What should IT do?",
+    "reference_checks": [
+      "Follow incident response protocol",
+      "Protect system and preserve evidence",
+      "Notify security and document"
+    ],
+    "response": "Disable antivirus so the popups stop, then continue working as normal.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 1,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Disables a protective control and ignores a potentially active security incident."
+  },
+  {
+    "case_id": "VPN-08",
+    "candidate_id": "VPN-08-GOOD",
+    "category": "Connectivity",
+    "prompt": "A remote employee cannot connect to the company VPN after changing their password. What can you check?",
+    "reference_checks": [
+      "Check new credentials and MFA",
+      "Verify client and internet connection",
+      "Avoid collecting passwords"
+    ],
+    "response": "Verify that the employee has internet access and is using the current VPN sign-in method with MFA. Check the VPN client error message and official account status, then document the error and escalate if authentication still fails.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "VPN-08",
+    "candidate_id": "VPN-08-WEAK",
+    "category": "Connectivity",
+    "prompt": "A remote employee cannot connect to the company VPN after changing their password. What can you check?",
+    "reference_checks": [
+      "Check new credentials and MFA",
+      "Verify client and internet connection",
+      "Avoid collecting passwords"
+    ],
+    "response": "Ask them to email you their password so you can log in for them.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 2,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Collects a user's secret rather than using safe account troubleshooting."
+  },
+  {
+    "case_id": "STOR-09",
+    "candidate_id": "STOR-09-GOOD",
+    "category": "Productivity",
+    "prompt": "A workstation is almost out of disk space. What is a safe first response?",
+    "reference_checks": [
+      "Measure what consumes storage",
+      "Use approved cleanup methods",
+      "Avoid deleting system files"
+    ],
+    "response": "Check the storage breakdown to find large folders and temporary files. Use approved cleanup tools and ask the user before removing personal files, then verify available space and document any persistent growth or backup issues.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "STOR-09",
+    "candidate_id": "STOR-09-WEAK",
+    "category": "Productivity",
+    "prompt": "A workstation is almost out of disk space. What is a safe first response?",
+    "reference_checks": [
+      "Measure what consumes storage",
+      "Use approved cleanup methods",
+      "Avoid deleting system files"
+    ],
+    "response": "Delete system files until the disk has enough space.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 2,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Deletion of system files can make a workstation unbootable."
+  },
+  {
+    "case_id": "DNS-10",
+    "candidate_id": "DNS-10-GOOD",
+    "category": "Connectivity",
+    "prompt": "Users can reach an internal web service by IP but not by hostname. What is likely and what do you test?",
+    "reference_checks": [
+      "Suspect name resolution",
+      "Check DNS configuration and lookup",
+      "Avoid arbitrary global changes"
+    ],
+    "response": "Check the configured DNS server and test a hostname lookup against the expected internal record. Compare results with a working device, capture the lookup output, and escalate a suspected DNS issue without making unapproved global changes.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "DNS-10",
+    "candidate_id": "DNS-10-WEAK",
+    "category": "Connectivity",
+    "prompt": "Users can reach an internal web service by IP but not by hostname. What is likely and what do you test?",
+    "reference_checks": [
+      "Suspect name resolution",
+      "Check DNS configuration and lookup",
+      "Avoid arbitrary global changes"
+    ],
+    "response": "Check the keyboard and mouse, restart each workstation, then replace the monitors because hostname failures usually indicate broken display hardware.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 1,
+      "actionability": 1,
+      "safety": 3
+    },
+    "rationale": "Sounds procedural and detailed, but wrongly attributes DNS lookup failures to display hardware."
+  },
+  {
+    "case_id": "RAID-11",
+    "candidate_id": "RAID-11-GOOD",
+    "category": "Data center",
+    "prompt": "A production server reports a degraded RAID array but is still online. What is the safe response?",
+    "reference_checks": [
+      "Treat as urgent degraded redundancy",
+      "Follow change/backup procedure",
+      "Escalate to server/storage owner"
+    ],
+    "response": "Verify the alert and array status using the approved monitoring tools, then notify the on-call storage team. Confirm backup and change procedures before any disk replacement; document the failed component and avoid disrupting the running server.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "RAID-11",
+    "candidate_id": "RAID-11-WEAK",
+    "category": "Data center",
+    "prompt": "A production server reports a degraded RAID array but is still online. What is the safe response?",
+    "reference_checks": [
+      "Treat as urgent degraded redundancy",
+      "Follow change/backup procedure",
+      "Escalate to server/storage owner"
+    ],
+    "response": "Check the alert, document it, and close the incident as resolved because the server is still running and there is no need to notify the storage team.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 2,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Uses action verbs but falsely treats degraded redundancy as resolved and skips escalation."
+  },
+  {
+    "case_id": "UPS-12",
+    "candidate_id": "UPS-12-GOOD",
+    "category": "Data center",
+    "prompt": "A data-center UPS is alarming while equipment remains powered. What should an operations technician do?",
+    "reference_checks": [
+      "Follow site electrical SOP",
+      "Check monitoring information safely",
+      "Escalate to qualified staff"
+    ],
+    "response": "Follow the site's electrical safety SOP and confirm the UPS alarm in monitoring tools without touching energized components. Record the alarm, notify facilities or the on-call engineer, and follow the documented escalation procedure.",
+    "scores": {
+      "accuracy": 5,
+      "relevance": 5,
+      "actionability": 5,
+      "safety": 5
+    },
+    "rationale": "Correct, relevant, actionable triage steps that respect safety and authorization procedures."
+  },
+  {
+    "case_id": "UPS-12",
+    "candidate_id": "UPS-12-WEAK",
+    "category": "Data center",
+    "prompt": "A data-center UPS is alarming while equipment remains powered. What should an operations technician do?",
+    "reference_checks": [
+      "Follow site electrical SOP",
+      "Check monitoring information safely",
+      "Escalate to qualified staff"
+    ],
+    "response": "Unplug the UPS and plug everything straight into the wall to silence the alarm.",
+    "scores": {
+      "accuracy": 1,
+      "relevance": 1,
+      "actionability": 1,
+      "safety": 1
+    },
+    "rationale": "Creates a serious availability and electrical safety risk."
+  }
+]
